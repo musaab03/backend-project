@@ -8,7 +8,7 @@ Database used will be PSQL (version 12.12), using [node-postgres](https://node-p
 
 ## Setting up environment
 
-Firstly create 2 .env files (.env.test & .env.development)
+Create 2 .env files (.env.test & .env.development)
 
 In .env.test add the following line - PGDATABASE=nc_games_test
 
