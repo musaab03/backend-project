@@ -1,11 +1,13 @@
 const { selectReviewById } = require("../models/reviews");
 
 exports.sendReview = (req, res, next) => {
-  const { review_id } = req.params;
-  selectReviewById(review_id)
-    .then((review) => {
-      console.log(review);
+  const { id } = req.params;
+
+  selectReviewById(id).then((review) => {
+    if (review == undefined) {
+      res.status(404).send({ msg: "Not Found" });
+    } else {
       res.status(200).send({ review });
-    })
-    .catch((err) => next(err));
+    }
+  });
 };

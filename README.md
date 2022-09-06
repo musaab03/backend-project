@@ -13,3 +13,5 @@ Firstly create 2 .env files (.env.test & .env.development)
 In .env.test add the following line - PGDATABASE=nc_games_test
 
 In .env.development add the following line - PGDATABASE=nc_games
+
+Do npm install to also import all the needed modules

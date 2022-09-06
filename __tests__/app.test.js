@@ -21,6 +21,15 @@ describe("Error Handling", () => {
         expect(body.msg).toBe("Not Found");
       });
   });
+
+  test("404: for id that does not exist", () => {
+    return request(app)
+      .get("/api/reviews/9999")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Not Found");
+      });
+  });
 });
 
 describe("GET", () => {
@@ -50,7 +59,6 @@ describe("GET", () => {
         .expect(200)
         .then((response) => {
           const { body } = response;
-          console.log(body);
 
           expect(typeof body.review.title).toBe("string");
           expect(typeof body.review.category).toBe("string");
