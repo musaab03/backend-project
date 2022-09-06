@@ -7,7 +7,7 @@ const { sendReview } = require("./controllers/reviews");
 app.use(express.json());
 
 app.get("/api/categories", sendCategories);
-app.get("/api/reviews/1", sendReview);
+app.get("/api/reviews/:id", sendReview);
 
 app.use((req, res, next) => {
   res.status(404).send({ msg: "Not Found" });

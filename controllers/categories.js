@@ -5,5 +5,5 @@ exports.sendCategories = (req, res, next) => {
     .then((categories) => {
       res.status(200).send({ categories });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => next(err));
 };
