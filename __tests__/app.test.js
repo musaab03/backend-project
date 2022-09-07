@@ -33,7 +33,7 @@ describe("Error Handling", () => {
 });
 
 describe("GET", () => {
-  describe("/api/categories: should return array of categories with slug and description properties", () => {
+  describe("/api/categories: should return array of category objects", () => {
     test("200: for returning the array of categories", () => {
       return request(app)
         .get("/api/categories")
@@ -68,6 +68,25 @@ describe("GET", () => {
           expect(typeof body.review.review_img_url).toBe("string");
           expect(typeof body.review.created_at).toBe("string");
           expect(typeof body.review.votes).toBe("number");
+        });
+    });
+  });
+
+  describe('"/api/users: should return array of user objects"', () => {
+    test("200: for returnng the array of users", () => {
+      return request(app)
+        .get("/api/users")
+        .expect(200)
+        .then((response) => {
+          const { body } = response;
+          expect(Array.isArray(body.users)).toBe(true);
+          expect(body.users.length > 0).toBe(true);
+
+          body.users.forEach((user) => {
+            expect(typeof user.username).toBe("string");
+            expect(typeof user.name).toBe("string");
+            expect(typeof user.avatar_url).toBe("string");
+          });
         });
     });
   });
