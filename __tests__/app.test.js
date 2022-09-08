@@ -18,16 +18,7 @@ describe("Error Handling", () => {
       .get("/api/bananas")
       .expect(404)
       .then(({ body }) => {
-        expect(body.msg).toBe("Not Found");
-      });
-  });
-
-  test("404: for id that does not exist", () => {
-    return request(app)
-      .get("/api/reviews/9999")
-      .expect(404)
-      .then(({ body }) => {
-        expect(body.msg).toBe("Not Found");
+        expect(body.msg).toBe("Path not found");
       });
   });
 });
@@ -53,6 +44,15 @@ describe("GET", () => {
   });
 
   describe('"/api/reviews/:review_id: should return specified review from id"', () => {
+    test("404: for review that does not exist", () => {
+      return request(app)
+        .get("/api/reviews/9999")
+        .expect(404)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Review not found");
+        });
+    });
+
     test("200: for returning review from id", () => {
       return request(app)
         .get("/api/reviews/1")
@@ -87,6 +87,32 @@ describe("GET", () => {
             expect(typeof user.name).toBe("string");
             expect(typeof user.avatar_url).toBe("string");
           });
+        });
+    });
+  });
+});
+
+describe("PATCH", () => {
+  describe('"/api/reviews/:review_id: should update review vote count based off inputted object"', () => {
+    test("400: for inputting an empty object", () => {
+      return request(app)
+        .patch("/api/reviews/1")
+        .send({})
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Inputted data is empty");
+        });
+    });
+
+    test("200: for updating and returning edited review object", () => {
+      const data = { inc_votes: 2 };
+      return request(app)
+        .patch("/api/reviews/2")
+        .send(data)
+        .expect(200)
+        .then((response) => {
+          const { body } = response;
+          expect(body.review.votes).toBe(7);
         });
     });
   });
