@@ -43,7 +43,7 @@ describe("GET", () => {
     });
   });
 
-  describe('"/api/reviews/:review_id: should return specified review from id"', () => {
+  describe("/api/reviews/:id: should return specified review from id", () => {
     test("404: for review that does not exist", () => {
       return request(app)
         .get("/api/reviews/9999")
@@ -55,11 +55,10 @@ describe("GET", () => {
 
     test("200: for returning review from id", () => {
       return request(app)
-        .get("/api/reviews/1")
+        .get("/api/reviews/2")
         .expect(200)
         .then((response) => {
           const { body } = response;
-
           expect(typeof body.review.title).toBe("string");
           expect(typeof body.review.category).toBe("string");
           expect(typeof body.review.designer).toBe("string");
@@ -68,11 +67,31 @@ describe("GET", () => {
           expect(typeof body.review.review_img_url).toBe("string");
           expect(typeof body.review.created_at).toBe("string");
           expect(typeof body.review.votes).toBe("number");
+          expect(typeof body.review.comment_count).toBe("number");
+        });
+    });
+
+    test("200: for returning review from id with no comments", () => {
+      return request(app)
+        .get("/api/reviews/1")
+        .expect(200)
+        .then((response) => {
+          const { body } = response;
+          console.log("body.review :>> ", body);
+          expect(typeof body.review.title).toBe("string");
+          expect(typeof body.review.category).toBe("string");
+          expect(typeof body.review.designer).toBe("string");
+          expect(typeof body.review.owner).toBe("string");
+          expect(typeof body.review.review_body).toBe("string");
+          expect(typeof body.review.review_img_url).toBe("string");
+          expect(typeof body.review.created_at).toBe("string");
+          expect(typeof body.review.votes).toBe("number");
+          expect(body.review.comment_count).toBe(0);
         });
     });
   });
 
-  describe('"/api/users: should return array of user objects"', () => {
+  describe("/api/users: should return array of user objects", () => {
     test("200: for returnng the array of users", () => {
       return request(app)
         .get("/api/users")
