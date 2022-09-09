@@ -112,6 +112,43 @@ describe("GET", () => {
         });
     });
   });
+
+  describe("/api/reviews: send array of all reviews in date descending order with an added comment_count property and category query", () => {
+    test("200: for returning array of reviews in date descending order", () => {
+      return request(app)
+        .get("/api/reviews")
+        .expect(200)
+        .then((response) => {
+          const { body } = response;
+          expect(body.reviews).toBeSortedBy("created_at", {
+            descending: true,
+          });
+        });
+    });
+
+    test("200: for returning array of reviews with a category query in date descending order", () => {
+      return request(app)
+        .get("/api/reviews?category=social deduction")
+        .expect(200)
+        .then((response) => {
+          const { body } = response;
+          expect(body.reviews).toBeSortedBy("created_at", {
+            descending: true,
+          });
+          body.reviews.forEach((review) => {
+            expect(typeof review.title).toBe("string");
+            expect(review.category).toBe("social deduction");
+            expect(typeof review.designer).toBe("string");
+            expect(typeof review.owner).toBe("string");
+            expect(typeof review.review_body).toBe("string");
+            expect(typeof review.review_img_url).toBe("string");
+            expect(typeof review.created_at).toBe("string");
+            expect(typeof review.votes).toBe("number");
+            expect(typeof review.comment_count).toBe("number");
+          });
+        });
+    });
+  });
 });
 
 describe("PATCH", () => {

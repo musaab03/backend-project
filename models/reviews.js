@@ -1,5 +1,17 @@
 const db = require("../db/connection");
 
+exports.selectAllReviews = (category) => {
+  let qrstr =
+    "SELECT reviews.*, COUNT(comments.review_id)::INT AS comment_count FROM reviews LEFT JOIN comments ON reviews.review_id = comments.review_id";
+  let queryValues = [];
+  if (category) {
+    qrstr += " WHERE category = $1";
+    queryValues.push(category);
+  }
+  qrstr += " GROUP BY reviews.review_id ORDER BY created_at DESC;";
+  return db.query(qrstr, queryValues).then((response) => response.rows);
+};
+
 exports.selectReviewById = (id) => {
   return db
     .query(
