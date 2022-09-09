@@ -1,4 +1,17 @@
-const { selectReviewById, editReviewVotes } = require("../models/reviews");
+const {
+  selectReviewById,
+  editReviewVotes,
+  selectAllReviews,
+} = require("../models/reviews");
+
+exports.sendAllReviews = (req, res, next) => {
+  const { category } = req.query;
+  selectAllReviews(category)
+    .then((reviews) => {
+      res.status(200).send({ reviews });
+    })
+    .catch(next);
+};
 
 exports.sendReview = (req, res, next) => {
   const { id } = req.params;

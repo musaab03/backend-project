@@ -5,7 +5,11 @@ const { internalErrorHandler, customErrorHandler } = require("./errors");
 
 const { sendCategories } = require("./controllers/categories");
 
-const { sendReview, sendUpdatedReview } = require("./controllers/reviews");
+const {
+  sendReview,
+  sendUpdatedReview,
+  sendAllReviews,
+} = require("./controllers/reviews");
 
 const { sendUsers } = require("./controllers/users");
 
@@ -13,6 +17,7 @@ app.use(express.json());
 
 app.get("/api/categories", sendCategories);
 app.get("/api/reviews/:id", sendReview);
+app.get("/api/reviews", sendAllReviews);
 app.get("/api/users", sendUsers);
 
 app.patch("/api/reviews/:id", sendUpdatedReview);
