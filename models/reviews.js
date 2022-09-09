@@ -15,14 +15,6 @@ exports.selectReviewById = (id) => {
     });
 };
 
-exports.selectComments = (id) => {
-  return db
-    .query("SELECT * FROM comments WHERE review_id = $1", [id])
-    .then((response) => {
-      return response.rows[0];
-    });
-};
-
 exports.editReviewVotes = (data, id) => {
   if (Object.keys(data) == 0) {
     return Promise.reject({
