@@ -4,7 +4,9 @@ const app = express();
 const { internalErrorHandler, customErrorHandler } = require("./errors");
 
 const { sendCategories } = require("./controllers/categories");
+
 const { sendReview, sendUpdatedReview } = require("./controllers/reviews");
+
 const { sendUsers } = require("./controllers/users");
 
 app.use(express.json());
