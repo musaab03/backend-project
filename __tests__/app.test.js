@@ -59,15 +59,17 @@ describe("GET", () => {
         .expect(200)
         .then((response) => {
           const { body } = response;
-          expect(typeof body.review.title).toBe("string");
-          expect(typeof body.review.category).toBe("string");
-          expect(typeof body.review.designer).toBe("string");
-          expect(typeof body.review.owner).toBe("string");
-          expect(typeof body.review.review_body).toBe("string");
-          expect(typeof body.review.review_img_url).toBe("string");
+          expect(body.review.title).toBe("Jenga");
+          expect(body.review.category).toBe("dexterity");
+          expect(body.review.designer).toBe("Leslie Scott");
+          expect(body.review.owner).toBe("philippaclaire9");
+          expect(body.review.review_body).toBe("Fiddly fun for all the family");
+          expect(body.review.review_img_url).toBe(
+            "https://www.golenbock.com/wp-content/uploads/2015/01/placeholder-user.png"
+          );
           expect(typeof body.review.created_at).toBe("string");
-          expect(typeof body.review.votes).toBe("number");
-          expect(typeof body.review.comment_count).toBe("number");
+          expect(body.review.votes).toBe(5);
+          expect(body.review.comment_count).toBe(3);
         });
     });
 
@@ -77,15 +79,16 @@ describe("GET", () => {
         .expect(200)
         .then((response) => {
           const { body } = response;
-          console.log("body.review :>> ", body);
-          expect(typeof body.review.title).toBe("string");
-          expect(typeof body.review.category).toBe("string");
-          expect(typeof body.review.designer).toBe("string");
-          expect(typeof body.review.owner).toBe("string");
-          expect(typeof body.review.review_body).toBe("string");
-          expect(typeof body.review.review_img_url).toBe("string");
+          expect(body.review.title).toBe("Agricola");
+          expect(body.review.category).toBe("euro game");
+          expect(body.review.designer).toBe("Uwe Rosenberg");
+          expect(body.review.owner).toBe("mallionaire");
+          expect(body.review.review_body).toBe("Farmyard fun!");
+          expect(body.review.review_img_url).toBe(
+            "https://www.golenbock.com/wp-content/uploads/2015/01/placeholder-user.png"
+          );
           expect(typeof body.review.created_at).toBe("string");
-          expect(typeof body.review.votes).toBe("number");
+          expect(body.review.votes).toBe(1);
           expect(body.review.comment_count).toBe(0);
         });
     });
