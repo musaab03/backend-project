@@ -113,7 +113,7 @@ describe("GET", () => {
     });
   });
 
-  describe("/api/reviews: should return array of all reviews in date descending order with an added comment_count property and category query", () => {
+  describe("/api/reviews: should return array of all reviews with a default date descending order with an added comment_count property and category query", () => {
     test("200: for returning array of reviews in date descending order", () => {
       return request(app)
         .get("/api/reviews")
@@ -128,7 +128,7 @@ describe("GET", () => {
 
     test("200: for returning array of reviews with a category query in date descending order", () => {
       return request(app)
-        .get("/api/reviews?category=social deduction")
+        .get("/api/reviews?category=social%20deduction")
         .expect(200)
         .then((response) => {
           const { body } = response;
@@ -151,7 +151,7 @@ describe("GET", () => {
   });
 
   describe("/api/reviews/:id/comments: should return array of all comments with the passed review_id", () => {
-    test("400: for returning msg when no comments exist", () => {
+    test("400: for returning error when no comments exist", () => {
       return request(app)
         .get("/api/reviews/1/comments")
         .expect(400)
