@@ -13,7 +13,11 @@ const {
 
 const { sendUsers } = require("./controllers/users");
 
-const { sendComments, addComment } = require("./controllers/comments");
+const {
+  sendComments,
+  addComment,
+  deleteComment,
+} = require("./controllers/comments");
 
 app.use(express.json());
 
@@ -26,6 +30,8 @@ app.get("/api/reviews/:id/comments", sendComments);
 app.post("/api/reviews/:id/comments", addComment);
 
 app.patch("/api/reviews/:id", sendUpdatedReview);
+
+app.delete("/api/comments/:id", deleteComment);
 
 app.all("/*", (req, res, next) => {
   res.status(404).send({ msg: "Path not found" });

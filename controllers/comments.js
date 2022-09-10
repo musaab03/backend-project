@@ -1,6 +1,7 @@
 const {
   selectCommentsFromReviewId,
   createComment,
+  removeComment,
 } = require("../models/comments");
 
 exports.sendComments = (req, res, next) => {
@@ -20,6 +21,15 @@ exports.addComment = (req, res, next) => {
   createComment(body, id)
     .then((comment) => {
       res.status(201).send({ comment });
+    })
+    .catch(next);
+};
+
+exports.deleteComment = (req, res, next) => {
+  const { id } = req.params;
+  removeComment(id)
+    .then(() => {
+      res.status(204).send();
     })
     .catch(next);
 };

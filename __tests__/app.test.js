@@ -128,7 +128,7 @@ describe("GET", () => {
 
     test("200: for returning array of reviews with a category query in date descending order", () => {
       return request(app)
-        .get("/api/reviews?category=social%20deduction")
+        .get("/api/reviews?category=social deduction")
         .expect(200)
         .then((response) => {
           const { body } = response;
@@ -224,6 +224,14 @@ describe("PATCH", () => {
           const { body } = response;
           expect(body.review.votes).toBe(7);
         });
+    });
+  });
+});
+
+describe("DELETE", () => {
+  describe("/api/comments/:id: should delete specified comment from comment_id", () => {
+    test("204: for successfully deleting the comment", () => {
+      return request(app).delete("/api/comments/3").expect(204);
     });
   });
 });
