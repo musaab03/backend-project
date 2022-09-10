@@ -13,12 +13,15 @@ const {
 
 const { sendUsers } = require("./controllers/users");
 
+const { sendComments } = require("./controllers/comments");
+
 app.use(express.json());
 
 app.get("/api/categories", sendCategories);
 app.get("/api/reviews/:id", sendReview);
 app.get("/api/reviews", sendAllReviews);
 app.get("/api/users", sendUsers);
+app.get("/api/reviews/:id/comments", sendComments);
 
 app.patch("/api/reviews/:id", sendUpdatedReview);
 

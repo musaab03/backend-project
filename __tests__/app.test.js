@@ -113,7 +113,7 @@ describe("GET", () => {
     });
   });
 
-  describe("/api/reviews: send array of all reviews in date descending order with an added comment_count property and category query", () => {
+  describe("/api/reviews: should return array of all reviews in date descending order with an added comment_count property and category query", () => {
     test("200: for returning array of reviews in date descending order", () => {
       return request(app)
         .get("/api/reviews")
@@ -145,6 +145,37 @@ describe("GET", () => {
             expect(typeof review.created_at).toBe("string");
             expect(typeof review.votes).toBe("number");
             expect(typeof review.comment_count).toBe("number");
+          });
+        });
+    });
+  });
+
+  describe("/api/reviews/:id/comments: should return array of all comments with the passed review_id", () => {
+    test("400: for returning msg when no comments exist", () => {
+      return request(app)
+        .get("/api/reviews/1/comments")
+        .expect(400)
+        .then((response) => {
+          const { body } = response;
+          expect(body.msg).toBe("No comments exist for specified review_id");
+        });
+    });
+
+    test("200: for returning array of comments", () => {
+      return request(app)
+        .get("/api/reviews/2/comments")
+        .expect(200)
+        .then((response) => {
+          const { body } = response;
+          expect(Array.isArray(body.comments)).toBe(true);
+          expect(body.comments.length > 0).toBe(true);
+
+          body.comments.forEach((comment) => {
+            expect(typeof comment.body).toBe("string");
+            expect(typeof comment.votes).toBe("number");
+            expect(typeof comment.author).toBe("string");
+            expect(comment.review_id).toBe(2);
+            expect(typeof comment.created_at).toBe("string");
           });
         });
     });
