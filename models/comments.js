@@ -14,3 +14,12 @@ exports.selectCommentsFromReviewId = (id) => {
       }
     });
 };
+
+exports.createComment = (data, id) => {
+  return db
+    .query(
+      "INSERT INTO comments (body, author, review_id) VALUES ($1, $2, $3) RETURNING *",
+      [data.body, data.username, id]
+    )
+    .then((response) => response.rows[0]);
+};

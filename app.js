@@ -13,7 +13,7 @@ const {
 
 const { sendUsers } = require("./controllers/users");
 
-const { sendComments } = require("./controllers/comments");
+const { sendComments, addComment } = require("./controllers/comments");
 
 app.use(express.json());
 
@@ -22,6 +22,8 @@ app.get("/api/reviews/:id", sendReview);
 app.get("/api/reviews", sendAllReviews);
 app.get("/api/users", sendUsers);
 app.get("/api/reviews/:id/comments", sendComments);
+
+app.post("/api/reviews/:id/comments", addComment);
 
 app.patch("/api/reviews/:id", sendUpdatedReview);
 

@@ -182,6 +182,26 @@ describe("GET", () => {
   });
 });
 
+describe("POST", () => {
+  describe("/api/reviews/:id/comments: insert a new comment with specified review_id", () => {
+    test("200: for successfully adding a new comment", () => {
+      const data = {
+        username: "bainesface",
+        body: "rubbish game!",
+      };
+      return request(app)
+        .post("/api/reviews/2/comments")
+        .send(data)
+        .expect(201)
+        .then((response) => {
+          const { body } = response;
+          expect(body.comment.body).toBe("rubbish game!");
+          expect(body.comment.author).toBe("bainesface");
+        });
+    });
+  });
+});
+
 describe("PATCH", () => {
   describe('"/api/reviews/:review_id: should update review vote count based off inputted object"', () => {
     test("400: for inputting an empty object", () => {
