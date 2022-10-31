@@ -41,3 +41,5 @@ Currently the API has 9 routes to access:
 - PATCH /api/reviews/:review_id
 - POST /api/reviews/:review_id/comments
 - DELETE /api/comments/:comment_id
+
+### Example
