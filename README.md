@@ -15,7 +15,7 @@ Database used will be PSQL (version 12.12), using [node-postgres](https://node-p
   ``
   git clone https://github.com/musaab03/backend-api
   ``
-  </br></br>Then cd into the directory
+  </br>Then cd into the directory
 
 - Create 2 .env files (.env.test & .env.development)
 
