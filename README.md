@@ -31,13 +31,13 @@ Database used will be PSQL (version 12.12), using node-postgres (version 8.7.3) 
 
 ## Using the API
 
-The API can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://houseofgamesbackendapi.herokuapp.com)
+The API can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://houseofgamesbackendapi.herokuapp.com) </br>
 Currently the API has 9 routes to access:
--GET /api/categories
--GET /api/reviews
--GET /api/reviews/:review_id
--GET /api/users
--GET /api/reviews/:review_id/comments
--PATCH /api/reviews/:review_id
--POST /api/reviews/:review_id/comments
--DELETE /api/comments/:comment_id
+- GET /api/categories
+- GET /api/reviews
+- GET /api/reviews/:review_id
+- GET /api/users
+- GET /api/reviews/:review_id/comments
+- PATCH /api/reviews/:review_id
+- POST /api/reviews/:review_id/comments
+- DELETE /api/comments/:comment_id
