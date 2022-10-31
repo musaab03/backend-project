@@ -27,6 +27,4 @@ Database used will be PSQL (version 12.12), using [node-postgres](https://node-p
    ``
    npm install
    ``
-
-
-Excecute the following commands to seed the database - npm run setup-dbs && npm run seed
+7. Excecute the following commands to seed the database  </br>``npm run setup-dbs``</br> ``npm run seed``
