@@ -10,20 +10,20 @@ Database used will be PSQL (version 12.12), using [node-postgres](https://node-p
 
 ## Setting up environment
 
-1 First, fork the repo to your own account
-2 Clone the repo on to your local machine with the following line </br>
+1. First, fork the repo to your own account
+2. Clone the repo on to your local machine with the following line </br>
   ``
   git clone https://github.com/musaab03/backend-api
   ``
   </br>Then cd into the directory
 
-3 Create 2 .env files (.env.test & .env.development)
+3. Create 2 .env files (.env.test & .env.development)
 
-4 In .env.test add the following line ``PGDATABASE=nc_games_test``
+4. In .env.test add the following line ``PGDATABASE=nc_games_test``
 
-5 In .env.development add the following line  ``PGDATABASE=nc_games``
+5. In .env.development add the following line  ``PGDATABASE=nc_games``
 
-6 Excecute the following line to import all the needed modules </br>
+6. Excecute the following line to import all the needed modules </br>
    ``
    npm install
    ``
