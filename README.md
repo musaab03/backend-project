@@ -43,3 +43,5 @@ Currently the API has 9 routes to access:
 - DELETE /api/comments/:comment_id
 
 ### Example
+GET /api/categories
+![image](https://user-images.githubusercontent.com/103457332/198995063-038d52d4-ae83-4b74-a356-f658d5448c65.png)
