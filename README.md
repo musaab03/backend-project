@@ -22,7 +22,10 @@ In .env.test add the following line - PGDATABASE=nc_games_test
 
 In .env.development add the following line - PGDATABASE=nc_games
 
-4) Excecute the following line import all the needed modules
+4) Excecute the following line to import all the needed modules </br>
+   ``
+   npm install
+   ``
 
 
 Excecute the following commands to seed the database - npm run setup-dbs && npm run seed
