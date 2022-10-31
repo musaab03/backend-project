@@ -6,7 +6,7 @@ API for the purpose of accessing application data programmatically. The intentio
 
 The API is hosted at the following address [https://houseofgamesbackendapi.herokuapp.com](https://houseofgamesbackendapi.herokuapp.com)
 
-Database used will be PSQL (version 12.12), using [node-postgres](https://node-postgres.com/) (version 8.7.3) to interact with it.
+Database used will be PSQL (version 12.12), using node-postgres (version 8.7.3) to interact with it.
 
 ## Setting up environment
 
@@ -28,3 +28,8 @@ Database used will be PSQL (version 12.12), using [node-postgres](https://node-p
    npm install
    ``
 7. Excecute the following commands to seed the database  </br>``npm run setup-dbs``</br> ``npm run seed``
+
+## Using the API
+
+The API can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://houseofgamesbackendapi.herokuapp.com)
+
