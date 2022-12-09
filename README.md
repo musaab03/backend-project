@@ -15,21 +15,21 @@ Database used will be PSQL (version 12.12), using node-postgres (version 8.7.3) 
 ```
 git clone https://github.com/musaab03/backend-api
 ```
-   Then cd into the directory
+3. Then cd into the directory
 
-3. Create 2 .env files (.env.test & .env.development)
+4. Create 2 .env files (.env.test & .env.development)
 
-4. In .env.test add the following line 
+5. In .env.test add the following line 
 ```
 PGDATABASE=nc_games_test
 ```
 
-5. In .env.development add the following line  
+6. In .env.development add the following line  
 ```
 PGDATABASE=nc_games
 ```
 
-6. Excecute the following line to import all the needed modules </br>
+7. Excecute the following line to import all the needed modules </br>
 ```
 npm install
 ```
