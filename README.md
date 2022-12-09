@@ -36,6 +36,7 @@ npm run setup-dbs
 ```
 npm run seed
 ```
+8. Done!
 
 ## Using the API
 
