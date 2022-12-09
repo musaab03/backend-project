@@ -20,16 +20,25 @@ Database used will be PSQL (version 12.12), using node-postgres (version 8.7.3) 
 3. Create 2 .env files (.env.test & .env.development)
 
 4. In .env.test add the following line 
-  ```PGDATABASE=nc_games_test```
+  ```
+  PGDATABASE=nc_games_test
+  ```
 
 5. In .env.development add the following line  
-```PGDATABASE=nc_games```
+```
+PGDATABASE=nc_games
+```
 
 6. Excecute the following line to import all the needed modules </br>
    ```
    npm install
    ```
-7. Excecute the following commands to seed the database  </br>```npm run setup-dbs```</br> ```npm run seed```
+7. Excecute the following commands to seed the database
+```
+npm run setup-dbs
+```
+```npm run seed
+```
 
 ## Using the API
 
