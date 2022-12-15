@@ -4,7 +4,7 @@
 
 API for the purpose of accessing application data programmatically. The intention here is to mimic the building of a real world backend service (such as reddit) which should provide this information to the front end architecture.
 
-The API is hosted at the following address [https://houseofgamesbackendapi.herokuapp.com](https://houseofgamesbackendapi.herokuapp.com)
+The API is hosted at the following address [https://houseofgamesbackendapi.herokuapp.com](https://houseofgamesbackendapi.herokuapp.com)(CURRENTLY OFFLINE)
 
 Database used will be PSQL (version 12.12), using node-postgres (version 8.7.3) to interact with it.
 
