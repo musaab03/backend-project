@@ -1,14 +1,13 @@
-# House of Games API
+<h1 align="center">Welcome to the House of Games API 👋</h1>
 
-## Background
+> API for the purpose of accessing application data programmatically. The intention here is to mimic the building of a real world backend service (such as reddit) which should provide this information to the front end architecture.
 
-API for the purpose of accessing application data programmatically. The intention here is to mimic the building of a real world backend service (such as reddit) which should provide this information to the front end architecture.
+### ✨ [Demo](https://portfolio-red-iota-12.vercel.app/)
 
-The API is hosted at the following address [https://houseofgamesbackendapi.herokuapp.com](https://houseofgamesbackendapi.herokuapp.com) (CURRENTLY OFFLINE)
+![image](https://user-images.githubusercontent.com/103457332/198995063-038d52d4-ae83-4b74-a356-f658d5448c65.png)
 
-Database used will be PSQL (version 12.12), using node-postgres (version 8.7.3) to interact with it.
 
-## Setting up environment
+## Install
 
 1. First, fork the repo to your own account
 2. Clone the repo on to your local machine with the following line </br>
@@ -38,7 +37,10 @@ npm run seed
 ```
    Done!
 
-## Using the API
+## Usage
+```sh
+npm run start
+```
 
 The API can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://houseofgamesbackendapi.herokuapp.com) </br>
 Currently the API has 9 routes to access:
@@ -51,6 +53,16 @@ Currently the API has 9 routes to access:
 - POST /api/reviews/:review_id/comments
 - DELETE /api/comments/:comment_id
 
-### Example
-GET /api/categories
-![image](https://user-images.githubusercontent.com/103457332/198995063-038d52d4-ae83-4b74-a356-f658d5448c65.png)
+# Tools and Technologies Used
+- NodeJS
+- ExpressJS
+- PostgreSQL
+- Jest Testing
+- Deployment via Heroku
+
+## Author
+
+👤 **Musaab Uppal**
+
+* Github: [@musaab03](https://github.com/musaab03)
+* LinkedIn: [@musaab-uppal](https://linkedin.com/in/musaab-uppal)
