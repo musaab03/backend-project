@@ -1,8 +1,6 @@
 <h1 align="center">Welcome to the House of Games API 👋</h1>
 
-> API for the purpose of accessing application data programmatically. The intention here is to mimic the building of a real world backend service (such as reddit) which should provide this information to the front end architecture.
-
-### ✨ [Demo](https://portfolio-red-iota-12.vercel.app/)
+> API for the purpose of accessing application data programmatically. The intention here is to mimic the building of a real world backend service (such as reddit) which should provide this information to the front end architecture. CURRENTLY OFFLINE
 
 ![image](https://user-images.githubusercontent.com/103457332/198995063-038d52d4-ae83-4b74-a356-f658d5448c65.png)
 
