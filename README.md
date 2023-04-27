@@ -1,6 +1,7 @@
 <h1 align="center">Welcome to the House of Games API 👋</h1>
 
-> API for the purpose of accessing application data programmatically. The intention here is to mimic the building of a real world backend service (such as reddit) which should provide this information to the front end architecture. CURRENTLY OFFLINE
+> API for the purpose of accessing application data programmatically. The intention here is to mimic the building of a real world backend service (such as reddit) which should provide this information to the front end architecture. CURRENTLY OFFLINE </br>
+Made during my time in the Northcoders bootcamp
 
 ![image](https://user-images.githubusercontent.com/103457332/198995063-038d52d4-ae83-4b74-a356-f658d5448c65.png)
 
@@ -41,7 +42,7 @@ npm run start
 ```
 
 The API can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://houseofgamesbackendapi.herokuapp.com) </br>
-Currently the API has 9 routes to access:
+Currently the API has 8 routes to access:
 - GET /api/categories
 - GET /api/reviews
 - GET /api/reviews/:review_id
