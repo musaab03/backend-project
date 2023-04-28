@@ -53,8 +53,8 @@ Currently the API has 8 routes to access:
 - DELETE /api/comments/:comment_id
 
 # Tools and Technologies Used
-- NodeJS
-- ExpressJS
+- Node.js
+- Express.js
 - PostgreSQL
 - Jest Testing
 - Deployment via Heroku
