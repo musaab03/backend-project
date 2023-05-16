@@ -27,7 +27,7 @@ PGDATABASE=nc_games
 ```
 npm install
 ```
-7. Excecute the following commands to seed the database
+8. Excecute the following commands to seed the database
 ```
 npm run setup-dbs
 ```
